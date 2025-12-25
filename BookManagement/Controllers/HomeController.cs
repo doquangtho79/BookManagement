@@ -9,5 +9,6 @@ namespace BookManagement.Controllers
             return View();
         }
         public IActionResult Privacy() => View();
+        public IActionResult Help() => View();
     }
 }

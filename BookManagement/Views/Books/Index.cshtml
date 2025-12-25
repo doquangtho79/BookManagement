@@ -5,7 +5,10 @@
 <ul>
     @foreach (var book in Model)
     {
-        <li>@book.Title - @book.Author</li>
+        <li>
+            @book.Title - @book.Author
+            <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-sm btn-secondary">Edit</a>
+        </li>
     }
 </ul>
 

@@ -1,13 +1,14 @@
 ﻿@model BookManagement.Models.Book
 
 @{
-    ViewData["Title"] = "Create Book";
+    ViewData["Title"] = "Edit Book";
 }
 
-<h1>Create Book</h1>
+<h1>Edit Book</h1>
 
-<form asp-action="Create" method="post">
+<form asp-action="Edit" method="post">
     @Html.AntiForgeryToken()
+    <input asp-for="Id" type="hidden" />
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="mb-3">
@@ -18,15 +19,11 @@
 
     <div class="mb-3">
         <label asp-for="Author" class="form-label"></label>
-        <select asp-for="Author"
-                asp-items="ViewBag.Authors"
-                class="form-control">
-            <option value="">-- Chọn tác giả --</option>
-        </select>
+        <select asp-for="Author" asp-items="ViewBag.Authors" class="form-select" size="2"></select>
         <span asp-validation-for="Author" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="submit" class="btn btn-primary">Save</button>
     <a asp-action="Index" class="btn btn-secondary">Back</a>
 </form>
 
